@@ -1,0 +1,23 @@
+# 环境变量文件
+.env
+
+# Deno 缓存
+.deno/
+
+# 数据文件（根据需要可以取消注释以跟踪数据文件）
+# data/tracked_papers.json
+# data/topics.json
+
+# 日志文件
+*.log
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# IDE 文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
