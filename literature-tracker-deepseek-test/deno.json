@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "test": "deno run --allow-all test.ts",
+    "test-interactive": "deno run --allow-all main.ts"
+  },
+  "imports": {
+    "@std/dotenv": "jsr:@std/dotenv@^0.225.5"
+  }
+}
