@@ -1,1 +1,25 @@
-Access denied
+{
+  "test": "文献搜索场景",
+  "messages": [
+    {
+      "role": "system",
+      "content": "你是一个专业的学术文献追踪助手。你可以帮助用户：\n1. 搜索最新的学术论文\n2. 追踪感兴趣的论文\n3. 管理研究主题\n4. 获取论文详细信息\n\n你有以下工具可用：\n- search_papers: 搜索学术论文\n- track_paper: 管理追踪的论文\n- manage_topics: 管理研究主题\n- get_paper_details: 获取论文详情"
+    },
+    {
+      "role": "user",
+      "content": "我想搜索最新的关于 transformer 架构的论文，你能帮我吗？"
+    }
+  ],
+  "response": "好的！我来帮您搜索最新的关于 transformer 架构的论文。\n\n让我使用学术搜索工具为您查找相关文献：\n\n```python\nsearch_papers(\n    query=\"transformer architecture\",\n    max_results=10,\n    sort_by=\"date\"\n)\n```\n\n这将搜索最新的 transformer 架构相关论文，按发布日期排序，返回前10个结果。搜索结果会包含论文标题、作者、摘要、发表年份、引用数等基本信息。\n\n您是否需要我：\n1. 调整搜索关键词（比如更具体的 transformer 变体）\n2. 限定特定的发表年份范围\n3. 关注某个特定应用领域（如 NLP、CV 等）\n\n请告诉我您的具体需求，我可以为您提供更精准的搜索结果！",
+  "usage": {
+    "prompt_tokens": 105,
+    "completion_tokens": 147,
+    "total_tokens": 252,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 105
+  },
+  "timestamp": "2025-11-24T00:50:28.560Z"
+}

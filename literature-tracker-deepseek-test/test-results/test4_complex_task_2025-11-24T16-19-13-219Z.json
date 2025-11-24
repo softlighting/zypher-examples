@@ -1,0 +1,25 @@
+{
+  "test": "复杂任务理解",
+  "messages": [
+    {
+      "role": "system",
+      "content": "你是一个专业的学术文献追踪助手。你需要帮助用户：\n1. 理解用户的研究需求\n2. 推荐合适的论文搜索策略\n3. 帮助组织和管理文献"
+    },
+    {
+      "role": "user",
+      "content": "我正在做一个关于大语言模型在医疗领域应用的研究项目。\n我需要：\n1. 找到最新的相关论文（最近3个月）\n2. 特别关注模型的准确性和可解释性\n3. 建立一个追踪列表\n你能帮我制定一个文献检索和管理计划吗？"
+    }
+  ],
+  "response": "当然可以。针对您的研究需求，我为您制定了一个系统化的文献检索与管理计划。这个计划分为三个核心部分：**检索策略**、**追踪列表建立**和**管理流程**。\n\n---\n\n### 第一部分：文献检索策略\n\n为了精准、高效地找到您需要的文献，建议采用以下组合策略：\n\n#### 1. 核心检索数据库与平台\n\n*   **PubMed / MEDLINE**: 生物医学领域的权威数据库，是查找临床应用和评估研究的首选。\n*   **arXiv**: 计算机科学、人工智能领域预印本的主要平台，能获取最新、最前沿的研究。\n*   **Google Scholar**: 覆盖面广，可以作为一个补充检索和引文追踪的工具。\n*   **ACL Anthology**: 计算语言学领域的核心论文库，包含大量关于LLM方法论的研究。\n*   **IEEE Xplore / ACM Digital Library**: 计算机和工程领域的重要数据库，包含许多关于模型可解释性的研究。\n\n#### 2. 关键词组合策略\n\n使用布尔运算符（AND, OR, NOT）组合以下关键词，在以上数据库中进行搜索：\n\n*   **核心概念1（大语言模型）**: `\"large language model\"` OR `LLM` OR `GPT` OR `BERT` OR `\"foundation model\"` OR `\"generative AI\"`\n*   **核心概念2（医疗领域）**: `medical` OR `healthcare` OR `clinical` OR `biomedical` OR `\"electronic health record\"` OR EHR\n*   **核心概念3（准确性）**: `accuracy` OR `evaluation` OR `performance` OR `benchmark` OR `\"clinical validity\"`\n*   **核心概念4（可解释性）**: `interpretability` OR `explainability` OR `XAI` OR `\"model explanation\"` OR `attention` OR `\"feature importance\"`\n\n**推荐检索式示例**：\n*   `(\"large language model\" OR LLM) AND (medical OR clinical) AND (accuracy OR evaluation)`\n*   `(GPT OR BERT) AND healthcare AND (interpretability OR explainability)`\n*   `\"foundation model\" AND \"electronic health record\" AND benchmark`\n\n#### 3. 筛选与精炼\n\n*   **时间范围**：在所有数据库中设置筛选条件为“最近3个月”或“2024年”（根据当前时间调整）。\n*   **文献类型**：优先选择**研究文章**和**综述**。对于预印本（如arXiv上的），需注意其尚未经过同行评议。\n*   **快速筛选**：通过阅读**标题**和**摘要**，快速判断论文是否同时涉及**应用场景**和**评估指标**（特别是准确性与可解释性）。\n\n---\n\n### 第二部分：建立文献追踪列表\n\n我建议您使用一个表格来作为您的核心追踪列表，这样信息结构化，便于后续分析和引用。\n\n| 序号 | 论文标题 | 作者 | 发表/上线日期 | 来源/期刊 | 核心应用场景 | 准确性评估指标 | 可解释性方法 | 关键发现/亮点 | 我的笔记/标签 | 状态 |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| 1 | 示例：Med-PaLM: Towards Expert-Level Clinical Question Answering | Singhal, K. et al. | 2023-10-15 | arXiv | 临床问答 | 准确率， F1分数， 专家一致性 | 注意力可视化， 错误分析 | 在多项选择题上达到专家水平 | #临床问答 #基准测试 | 已读 |\n| 2 | | | | | | | | | | 待读 |\n| 3 | | | | | | | | | | ... |\n\n**表格列说明**：\n*   **核心应用场景**：如临床问答、诊断辅助、病历摘要、药物发现等。\n*   **准确性评估指标**：如准确率、F1分数、AUC-ROC、与专家判断的一致性等。\n*   **可解释性方法**：如注意力机制、SHAP值、LIME、反事实解释、生成自然语言解释等。\n*   **我的笔记/标签**：用于记录您的思考和自定义分类（例如：`#方法创新`， `#结果存疑`， `#需精读`）。\n*   **状态**：如“待读”、“已读”、“需精读”、“已总结”。\n\n---\n\n### 第三部分：持续追踪与管理流程\n\n#### 1. 工具推荐\n*   **参考文献管理软件**：强烈推荐使用 **Zotero** 或 **Mendeley**。它们可以一键抓取文献信息、存储PDF、插入引文，并能与这个追踪表格很好地配合使用。\n*   **表格工具**：任何你熟悉的工具都可以，如 **Excel**, **Google Sheets**, **Notion** 或 **Airtable**。Notion和Airtable的数据库功能更强大。\n\n#### 2. 工作流程\n1.  **批量检索**：根据第一部分的策略，在选定数据库中进行初步检索。\n2.  **初步筛选**：将看起来相关的论文添加到Zotero/Mendeley中，并下载PDF。\n3.  **更新追踪表**：为每一篇筛选后的论文在追踪表中创建一行，填好基本信息（标题、作者、日期等）。\n4.  **阅读与总结**：\n    *   **速读**：阅读摘要、引言和结论，填写“核心应用场景”和“关键发现”。\n    *   **精读**：对于高相关性的论文，仔细阅读方法学和实验部分，填写“准确性评估指标”和“可解释性方法”等细节。\n5.  **设置持续提醒**：\n    *   在 **Google Scholar** 上为关键检索词设置“快讯”。\n    *   关注 **arXiv** 的 `cs.CL` 和 `cs.AI` 板块，并订阅其RSS源。\n    *   关注相关领域顶尖学者（如来自Google Health, Stanford NLP, 等团队的研究人员）的最新动态。\n\n#### 3. 下一步行动建议\n*   **立即开始**：按照上述检索式在PubMed和arXiv上进行第一轮搜索。\n*   **建立模板**：现在就打开一个表格工具，创建上述结构的追踪列表。\n*   **定期回顾**：每周花固定时间（如周五下午）更新追踪列表，处理新发现的论文。\n\n这个计划将帮助您从海量信息中系统地找到、筛选、组织和理解您所需的文献。如果您在执行过程中遇到任何问题，例如对某篇论文的理解或需要调整检索策略，请随时告诉我！",
+  "usage": {
+    "prompt_tokens": 96,
+    "completion_tokens": 1422,
+    "total_tokens": 1518,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 96
+  },
+  "timestamp": "2025-11-24T00:54:11.673Z"
+}

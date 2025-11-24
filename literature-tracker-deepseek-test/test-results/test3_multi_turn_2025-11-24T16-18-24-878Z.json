@@ -1,0 +1,52 @@
+{
+  "test": "多轮对话能力",
+  "conversation": [
+    {
+      "turn": 1,
+      "user": "我想追踪深度学习方向的论文。",
+      "assistant": "好的，为了高效追踪深度学习领域的最新论文，我为您设计了一套系统性的方案。这套方案结合了自动化工具和手动精选，覆盖了从“海量发现”到“深度精读”的全流程。\n\n### 一、 自动化追踪：让论文主动找你\n\n这是最高效的方式，可以避免你每天手动去各个网站搜寻。\n\n**1. 预印本平台订阅（核心）**\n这是获取最前沿研究的最快渠道。\n\n*   **arXiv.org**： 必选。每天都有大量深度学习论文发布。\n    *   **使用方法**：\n        *   **订阅特定类别**： 重点关注 `cs.CV`（计算机视觉）， `cs.LG`（机器学习）， `cs.CL`（计算语言学）， `cs.AI`（人工智能）， `cs.NE`（神经与演化计算）等。\n        *   **使用RSS阅读器**： 将你感兴趣的类别RSS源（如 `http://arxiv.org/rss/cs.CV`）添加到Feedly、Inoreader等RSS阅读器中。\n        *   **使用邮件订阅**： arXiv本身提供每日邮件推送。\n        *   **关键词过滤**： 在RSS阅读器或邮件中设置关键词过滤器（如 “Transformer”, “Diffusion Model”, “Large Language Model”），只接收你关心的论文。\n\n**2. 论文聚合与推荐平台**\n这些平台利用算法为你个性化推荐论文。\n\n*   **Papers With Code**： **强烈推荐**。它将论文与代码实现关联起来，你可以直接看到论文的官方或社区复现结果。你可以按任务、数据集、性能指标排序，追踪SOTA（最先进技术）。\n*   **Google Scholar**：\n    *   **创建“学术快讯”**： 为你关注的关键词（如 “few-shot learning”， “vision transformer”）创建快讯，一旦有新论文发布，Google会发邮件给你。\n    *   **关注学者**： 关注你所在领域大牛的主页，他们的新论文会出现在你的动态里。\n*   **Connected Papers**： 输入一篇核心论文，它可以生成一张相关论文的可视化图谱，非常适合探索一个子领域的来龙去脉和最新进展。\n*   **Semantic Scholar**： 由艾伦研究所开发，提供简洁的摘要和强大的语义搜索功能。\n\n### 二、 手动精选：关注权威信源\n\n自动化工具信息量大，但噪音也多。需要结合高质量的“人工筛选”源。\n\n**1. 顶级会议与期刊**\n深度学习的研究成果主要发表在顶级会议上。关注它们的录用论文列表。\n\n*   **核心会议**：\n    *   **NeurIPS** （神经信息处理系统大会）\n    *   **ICML** （国际机器学习大会）\n    *   **ICLR** （国际学习表征大会）\n    *   **CVPR** （计算机视觉与模式识别会议）\n    *   **ACL** （计算语言学协会）\n    *   **EMNLP** （自然语言处理实证方法会议）\n    *   **AAAI** （人工智能促进协会年会）\n*   **关注方式**： 在会议召开前后，访问官方网站查看被接收的论文列表。很多会议也会在OpenReview上公开评审过程。\n\n**2. 社区与媒体**\n*   **Reddit**： 订阅 `r/MachineLearning` 子版块，社区成员会分享和讨论最新的重要论文。\n*   **Twitter / X**： 关注你领域内的顶尖研究者、知名实验室和会议官方账号。他们通常会第一时间分享自己的新工作。\n*   **中文社区**： 如“知乎”上的相关话题和专栏，以及一些微信公众号（如“机器之心”、“AI科技评论”），它们会编译和解读最新的重磅论文。\n\n### 三、 高效管理：构建你的知识库\n\n追踪到的论文需要有效管理，否则很快就会遗忘。\n\n*   **参考文献管理软件**：\n    *   **Zotero**： 免费、开源，浏览器插件可以一键抓取论文信息。\n    *   **Mendeley**： 同样强大，社区功能较好。\n*   **使用方法**：\n    1.  **建立文件夹**： 按研究主题（如“扩散模型”、“大语言模型应用”）建立分类。\n    2.  **添加标签**： 为每篇论文打上标签（如“待读”、“精读”、“已复现”、“SOTA”）。\n    3.  **做笔记**： 直接在软件内记录论文的核心思想、方法和你的思考。\n\n### 四、 实践建议：从追踪到吸收\n\n1.  **制定阅读流程**：\n    *   **第一遍（速读）**： 看标题、摘要、图表。判断是否与你的研究高度相关。\n    *   **第二遍（精读）**： 如果相关，仔细阅读引言、方法部分和实验设置。跳过复杂的数学推导。\n    *   **第三遍（复现式阅读）**： 如果论文非常重要，尝试在脑中或纸上复现整个方法流程，彻底理解每一个细节。\n\n2.  **保持节奏，避免信息过载**：\n    *   每天花15-30分钟快速浏览RSS和邮件推送，将感兴趣的论文“标记”或“收藏”到你的文献管理软件中。\n    *   每周安排固定的“深度阅读时间”（如2-3小时），来精读你收藏列表中最重要的1-2篇论文。\n\n### 总结与启动步骤\n\n**现在你可以立即开始：**\n\n1.  **注册** Papers With Code 和 Google Scholar 账号。\n2.  **在 Google Scholar 上设置** 2-3个你最关心的关键词的“学术快讯”。\n3.  **下载 Zotero 或 Mendeley**，并创建一个名为“2024深度学习追踪”的库。\n4.  **访问 arXiv**，找到 `cs.LG` 类别的RSS链接，并将其添加到你的RSS阅读器（如Feedly）。\n5.  **在 Reddit 上关注** `r/MachineLearning`。\n\n通过这套组合拳，你不仅能跟上深度学习日新月异的发展，还能系统地构建起自己的知识体系。如果你有更具体的研究方向（例如计算机视觉、自然语言处理），我可以为你提供更具针对性的追踪建议。",
+      "usage": {
+        "prompt_tokens": 27,
+        "completion_tokens": 1321,
+        "total_tokens": 1348,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 27
+      }
+    },
+    {
+      "turn": 2,
+      "user": "特别是关于 transformer 和注意力机制的论文。",
+      "assistant": "好的！针对Transformer和注意力机制这个具体且快速发展的子领域，我们需要在通用方案之上，进行更精准的追踪。以下是为你量身定制的强化版方案。\n\n### 一、 精准自动化追踪：聚焦Transformer与注意力\n\n**1. arXiv 订阅优化**\n\n*   **核心类别**： `cs.CL`（计算语言学）、`cs.CV`（计算机视觉）、`cs.LG`（机器学习）是Transformer论文最集中的地方。\n*   **关键词过滤是重中之重**： 在你的RSS阅读器或邮件订阅中，必须设置以下关键词：\n    *   **基础模型**： `Transformer`, `Attention Mechanism`, `Self-Attention`\n    *   **核心变体与改进**：\n        *   `Efficient Transformer`（高效Transformer）\n        *   `Sparse Attention`（稀疏注意力）\n        *   `Linear Attention`（线性注意力）\n        *   `Long-range Arena`（长序列基准）\n        *   `State Space Model`（状态空间模型，如Mamba， 这是当前挑战Transformer的重要方向）\n    *   **著名模型架构**： `BERT`, `GPT`, `T5`, `Vision Transformer`, `Swin Transformer`, `Perceiver`, `Mamba`\n\n**2. Papers With Code 的极致用法**\n\n*   **追踪特定任务**： 在Papers With Code上关注那些被Transformer深刻变革的任务，并查看它们的SOTA榜单：\n    *   **NLP领域**： Text Classification, Question Answering, Summarization\n    *   **CV领域**： Image Classification, Object Detection, Image Segmentation\n    *   **多模态领域**： VQA, Image Captioning\n    *   **看什么**： 看榜单上哪些新模型是基于Transformer或它的变体，这往往是效率或性能的突破。\n*   **浏览“方法”标签**： 直接搜索 `Transformer`，并按时间排序，查看最新发布了代码的论文。\n\n### 二、 权威信源与社区：紧跟前沿讨论\n\n**1. 顶级会议的特定研讨会**\n\n许多顶级会议会有专门针对高效架构、长序列建模的研讨会，这里是Transformer改进论文的温床。\n\n*   **关注**：\n    *   **Efficient Natural Language and Speech Processing** （在NeurIPS/ICML/ACL等会议下的研讨会）\n    *   **Long-Form Text Understanding** （长文本理解）\n    *   这些研讨会的论文集里充满了关于改进Attention效率的最新研究。\n\n**2. 核心学者与实验室**\n\n在Twitter/X和Google Scholar上关注这些领域的先驱者和顶尖团队，他们的工作几乎定义了领域的发展方向。\n\n*   **创始人与奠基者**：\n    *   **Ashish Vaswani**： 《Attention Is All You Need》的第一作者。\n    *   **Aidan N. Gomez**： Cohere CEO， 论文合著者。\n    *   **Lukasz Kaiser**： 论文合著者， OpenAI。\n    *   **Illia Polosukhin**： 论文合著者。\n*   **推动边界的研究者与实验室**：\n    *   **Alexandre Défossez**： Fair (Meta) 的研究员， 在高效音频Transformer方面的工作。\n    *   **Hugo Touvron**： 来自Meta， 发表了LLaMA系列模型。\n    *   **William Peebles**： 与Sora相关， 但其在视觉领域的基础模型工作（如DiT）极具影响力。\n    *   **Albert Gu**： Mamba（状态空间模型）的作者之一， 这是当前最热门的Transformer挑战者。\n    *   **Stanford CRFM**、**Google Research**、**Meta AI**、**OpenAI**、**DeepMind** 的官方账号。\n\n**3. 社区热点**\n\n*   **Reddit: r/MachineLearning**： 搜索 `[R]` 标签的帖子，后面跟着 `Transformer`、`Mamba`、`SSM` 等关键词。当有突破性论文出现时，这里通常会有第一时间的热烈讨论和代码实现链接。\n*   **Hugging Face Blog**： 他们会及时发布对重要新模型（尤其是Transformer类）的解读、使用和代码示例。\n\n### 三、 深度探索与脉络梳理\n\n当你读到一篇关于Transformer改进的重要论文时，使用以下工具进行深度挖掘：\n\n*   **Connected Papers**：\n    1.  将这篇论文的arXiv链接输入。\n    2.  分析生成的图谱：\n        *   **Prior Works**（先前工作）： 了解这项工作的理论基础。\n        *   **Derivative Works**（衍生工作）： 了解这项工作发表后，产生了哪些新的研究分支。这是追踪最新进展的绝佳方式。\n*   **Litmaps**： 另一个强大的工具，可以帮你发现你可能遗漏的相关论文，并可视化论文间的引用关系。\n\n### 四、 知识管理：建立你的“注意力”专题库\n\n在你的文献管理软件（如Zotero）中，建议建立如下结构的文件夹/标签：\n\n*   **文件夹**：\n    *   `01-Transformer-Core` （原始论文、权威综述）\n    *   `02-Efficient-Architectures` （关于计算/内存效率的改进，如Linformer, Performer, Mamba）\n    *   `03-Long-Sequence-Modeling` （长序列处理）\n    *   `04-Multimodal-Applications` （在视觉、音频等多模态领域的应用）\n    *   `05-Theory-Analysis` （对注意力机制的理论分析、解释性工作）\n*   **标签**：\n    *   `#待读`\n    *   `#精读-核心`\n    *   `#有代码`\n    *   `#挑战者` （例如，给Mamba等SSM论文打上这个标签）\n\n### 启动行动计划\n\n1.  **立即行动**： 在Google Scholar快讯和arXiv RSS过滤器中，添加上面列出的精准关键词，特别是 `Efficient Transformer` 和 `State Space Model`。\n2.  **关注核心人物**： 在Twitter/X上找到并关注第2部分列出的至少5位研究者。\n3.  **深度探索一次**： 找一篇你感兴趣的近期Transformer改进论文（例如Mamba的论文），将其输入 **Connected Papers**，花15分钟探索它的“衍生工作”图谱，你会立即发现一个活跃的研究网络。\n\n通过这个聚焦的方案，你不仅能追踪到所有关于Transformer和注意力的重要论文，更能理解它们之间的演化关系和竞争格局，从而把握这个领域真正的脉搏。",
+      "usage": {
+        "prompt_tokens": 1361,
+        "completion_tokens": 1399,
+        "total_tokens": 2760,
+        "prompt_tokens_details": {
+          "cached_tokens": 1280
+        },
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 81
+      }
+    },
+    {
+      "turn": 3,
+      "user": "你能总结一下我们刚才讨论的内容吗？",
+      "assistant": "好的，当然可以。我们刚才的讨论可以总结为以下一套 **“从广到精，人机结合”的学术追踪体系**，它被分为四个核心部分：\n\n---\n\n### **总结：深度学习（特别是Transformer与注意力机制）论文追踪方案**\n\n#### **1. 核心原则**\n- **自动化 + 手动精选**：利用工具减少重复劳动，同时依靠权威信源保证质量。\n- **管理优先**：追踪到的论文必须立即纳入文献管理系统，否则等于没追踪。\n\n#### **2. 四层追踪体系**\n\n| 层级 | 目的 | 关键工具/方法 |\n| :--- | :--- | :--- |\n| **第一层：全局瞭望** | 海量发现，不漏掉任何潜在相关论文。 | **arXiv** (通过RSS/邮件 + **精准关键词过滤**)， **Google Scholar 快讯** |\n| **第二层：精准聚焦** | 针对Transformer/注意力领域进行强化追踪。 | **Papers With Code** (追踪SOTA榜单)， **Twitter/X** (关注领域大牛)， **Reddit (r/MachineLearning)** (参与社区讨论) |\n| **第三层：深度挖掘** | 理解一篇论文在整个研究脉络中的位置，发现最新衍生工作。 | **Connected Papers** (绘制研究图谱)， **Litmaps** (发现隐藏关联) |\n| **第四层：系统管理** | 将信息转化为知识，构建个人知识库。 | **Zotero / Mendeley** (使用文件夹和标签进行分类，并做阅读笔记) |\n\n#### **3. 针对Transformer的特别策略**\n- **关键词是关键**：除了基础词（`Transformer`, `Attention`），更要关注前沿词如 **`Efficient Transformer`**、**`State Space Model`**、**`Mamba`**、**`Long-range`** 等。\n- **关注挑战者**：当前**状态空间模型（SSM）** 是Transformer在长序列建模上的重要挑战者，需重点关注。\n- **紧跟顶尖实验室与学者**：他们的工作往往定义了领域下一阶段的方向。\n\n#### **4. 可立即执行的启动步骤**\n1.  **设置**：在Google Scholar和arXiv上设置关于`Efficient Transformer`和`Mamba`的快讯与过滤。\n2.  **关注**：在Twitter/X上关注至少5位领域内的核心研究者。\n3.  **管理**：下载一个文献管理软件，并建立好“Transformer”相关的文件夹结构。\n4.  **探索**：用 **Connected Papers** 分析一篇近期热点论文，直观感受研究脉络。\n\n**总而言之，这套系统的精髓在于：让机器帮你完成“搜索和推送”的体力活，让你能集中精力在“筛选、阅读和思考”的脑力活上，从而高效地站在科研最前沿。**",
+      "usage": {
+        "prompt_tokens": 2773,
+        "completion_tokens": 599,
+        "total_tokens": 3372,
+        "prompt_tokens_details": {
+          "cached_tokens": 1920
+        },
+        "prompt_cache_hit_tokens": 1920,
+        "prompt_cache_miss_tokens": 853
+      }
+    }
+  ],
+  "total_tokens": 7480,
+  "timestamp": "2025-11-24T00:53:04.786Z"
+}

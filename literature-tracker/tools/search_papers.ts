@@ -1,6 +1,19 @@
 import { defineTool } from "@corespeed/zypher/tools";
 import z from "zod";
 
+type Paper = {
+  id: string;
+  title: string;
+  authors: string[];
+  abstract: string;
+  published: string;
+  source: string;
+  url: string;
+  categories: string[];
+};
+
+const ARXIV_API_ENDPOINT = "https://export.arxiv.org/api/query";
+
 /**
  * 搜索学术论文工具
  * 模拟从 arXiv、PubMed 等数据源搜索论文
@@ -27,19 +40,64 @@ export const SearchPapersTool = defineTool({
       .describe("排序方式：relevance（相关性），date（发表时间）"),
   }),
   execute: async ({ query, source, max_results, sort_by }) => {
-    // 模拟 API 调用延迟
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    const normalizedQuery = query.trim();
+    const normalizedSort = sort_by;
 
-    // 模拟搜索结果
-    const mockPapers = generateMockPapers(query, source, max_results, sort_by);
+    const combinedResults: Paper[] = [];
+    let arxivError: string | undefined;
+
+    if (source === "arxiv" || source === "all") {
+      const arxivTarget =
+        source === "all" ? Math.min(max_results, Math.ceil(max_results / 2)) : max_results;
+      try {
+        const arxivPapers = await fetchArxivPapers(
+          normalizedQuery,
+          arxivTarget,
+          normalizedSort,
+        );
+        combinedResults.push(...arxivPapers.slice(0, arxivTarget));
+      } catch (error) {
+        arxivError = error instanceof Error ? error.message : String(error);
+        console.error("获取 arXiv 数据失败:", error);
+      }
+    }
+
+    const needsMockData =
+      source === "pubmed" || (source === "all" && combinedResults.length < max_results) ||
+      (source === "arxiv" && arxivError);
+
+    if (needsMockData) {
+      const remaining =
+        source === "all"
+          ? Math.max(0, max_results - combinedResults.length)
+          : source === "pubmed"
+          ? max_results
+          : Math.max(0, max_results - combinedResults.length);
+
+      if (remaining > 0) {
+        combinedResults.push(
+          ...generateMockPapers(
+            normalizedQuery,
+            source === "pubmed" ? "pubmed" : source,
+            remaining,
+            normalizedSort,
+          ),
+        );
+      }
+    }
+
+    const finalResults = combinedResults.slice(0, max_results);
+    const messageSuffix = arxivError
+      ? "（arXiv 数据获取失败，已使用模拟数据补全）"
+      : "";
 
     return {
       success: true,
       query,
       source,
-      total_results: mockPapers.length,
-      papers: mockPapers,
-      message: `找到 ${mockPapers.length} 篇相关论文`,
+      total_results: finalResults.length,
+      papers: finalResults,
+      message: `找到 ${finalResults.length} 篇相关论文${messageSuffix}`,
     };
   },
 });
@@ -161,4 +219,105 @@ function generateCategories(
       Math.floor(Math.random() * 2) + 1,
     );
   }
+}
+
+async function fetchArxivPapers(
+  query: string,
+  maxResults: number,
+  sortBy: string,
+): Promise<Paper[]> {
+  const params = new URLSearchParams({
+    search_query: `all:${query}`,
+    start: "0",
+    max_results: Math.min(maxResults, 50).toString(),
+    sortBy: sortBy === "date" ? "submittedDate" : "relevance",
+    sortOrder: "descending",
+  });
+
+  const response = await fetch(`${ARXIV_API_ENDPOINT}?${params.toString()}`);
+  if (!response.ok) {
+    throw new Error(`arXiv API 请求失败，状态码 ${response.status}`);
+  }
+
+  const xml = await response.text();
+  const parsed = parseArxivFeed(xml);
+  return parsed.slice(0, maxResults);
+}
+
+function parseArxivFeed(xml: string): Paper[] {
+  const entries = xml.split("<entry>").slice(1);
+  const papers: Paper[] = [];
+
+  for (const entry of entries) {
+    const entryContent = entry.split("</entry>")[0];
+    const title = decodeHtmlEntities(getTagContent(entryContent, "title"));
+    const abstract = decodeHtmlEntities(
+      getTagContent(entryContent, "summary").replace(/\s+/g, " ").trim(),
+    );
+    const published = getTagContent(entryContent, "published") ||
+      getTagContent(entryContent, "updated");
+    const url = getTagContent(entryContent, "id");
+
+    if (!title || !url) {
+      continue;
+    }
+
+    papers.push({
+      id: url,
+      title,
+      abstract,
+      published: published ? published.split("T")[0] : "",
+      source: "arxiv",
+      url,
+      authors: extractAuthors(entryContent),
+      categories: extractCategories(entryContent),
+    });
+  }
+
+  return papers;
+}
+
+function getTagContent(xmlChunk: string, tag: string): string {
+  const regex = new RegExp(`<${tag}[^>]*>([\\s\\S]*?)</${tag}>`, "i");
+  const match = xmlChunk.match(regex);
+  if (!match) {
+    return "";
+  }
+  return match[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1").trim();
+}
+
+function decodeHtmlEntities(value: string): string {
+  return value
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .trim();
+}
+
+function extractAuthors(entryContent: string): string[] {
+  const authors: string[] = [];
+  const regex = /<author>\s*<name>([\s\S]*?)<\/name>\s*<\/author>/gi;
+  let match;
+  while ((match = regex.exec(entryContent)) !== null) {
+    authors.push(decodeHtmlEntities(match[1]));
+  }
+
+  if (!authors.length) {
+    authors.push("未知作者");
+  }
+
+  return authors;
+}
+
+function extractCategories(entryContent: string): string[] {
+  const categories: string[] = [];
+  const regex = /<category[^>]*term="([^"]+)"/gi;
+  let match;
+  while ((match = regex.exec(entryContent)) !== null) {
+    categories.push(match[1]);
+  }
+
+  return categories.length ? categories : ["cs.AI"];
 }
