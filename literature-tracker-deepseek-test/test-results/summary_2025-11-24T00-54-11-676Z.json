@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-11-24T00:50:01.268Z",
+  "api_key": "sk-50ef015...",
+  "tests": [
+    {
+      "name": "基本对话能力",
+      "passed": true
+    },
+    {
+      "name": "文献搜索场景",
+      "passed": true
+    },
+    {
+      "name": "多轮对话能力",
+      "passed": true
+    },
+    {
+      "name": "复杂任务理解",
+      "passed": true
+    }
+  ]
+}
